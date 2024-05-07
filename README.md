@@ -1,4 +1,4 @@
-# ahelper
+# a-helper
 A-Helper: A driver helper/optimization utility designed for ROG Ally
 
 Features:
