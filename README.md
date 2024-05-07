@@ -7,6 +7,7 @@ Features:
 > 1-click optimization for WiFi/Bluetooth control, stopping services, clearing temporary system files, GPU cache and system level tweaks
 
 
+REQUIRES .NET 6 - If you do not have this installed, the application will prompt for this and will take you to the official Microsoft website for download
 Test Build is available for [Download ](https://github.com/alixzibit/a-helper/releases/download/testbuild_release/ahelper_test_build.zip)
 
 USAGE INFO
