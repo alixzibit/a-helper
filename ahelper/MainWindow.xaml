@@ -1,0 +1,152 @@
+﻿<Window x:Class="ahelper.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ahelper" 
+        xmlns:controls="clr-namespace:ahelper.Controls"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanMinimize"
+        AllowsTransparency="True"
+        
+        Title="A-helper" Height="700" Width="1007" IsTabStop="False" WindowStyle="None" BorderThickness="3,0,3,3" Topmost="False" Background="{x:Null}" Foreground="{x:Null}">
+
+    <Window.Effect>
+        <DropShadowEffect ShadowDepth="7"/>
+    </Window.Effect>
+
+    <Grid>
+        <Image x:Name="Background_Image" Source="Resources\darkbg.png" Width="auto" Height="auto"
+               Stretch="UniformToFill" Margin="-1,0,1,0"/>
+        <Grid>
+            <TabControl x:Name="tabControl" IsTabStop="False" Height="597" Margin="168,0,17,0" VerticalAlignment="Center" BorderThickness="3,3,3,3" Focusable="True" Padding="0,0,0,0" Background="{x:Null}" BorderBrush="{x:Null}" >
+                <TabItem x:Name="radeondm_tab" Header="Radeon Driver Manager"  FocusVisualStyle="{StaticResource FocusVisualStyle2}" Margin="-2,2,-2,-2" Foreground="Black" FontStretch="Condensed" FontSize="20" FontFamily="Asap Condensed SemiBold" FontWeight="Medium" Height="30">
+                    <TabItem.Background>
+                        <LinearGradientBrush EndPoint="0,1">
+                            <GradientStop Color="#FFF0F0F0"/>
+                            <GradientStop Color="#FFB92E2E" Offset="1"/>
+                        </LinearGradientBrush>
+                    </TabItem.Background>
+                    <TabItem.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}" FontFamily="{StaticResource ROGfont}" />
+                        </DataTemplate>
+                    </TabItem.HeaderTemplate>
+                    <Grid>
+                        <Grid.Background>
+                            <ImageBrush ImageSource="/Resources/grid_box1.png"/>
+                        </Grid.Background>
+                        <controls:RadeonDriverManager Height="auto" VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="auto"/>
+                    </Grid>
+                </TabItem>
+                <TabItem x:Name="optimize_tab" Header="Optimize"  FocusVisualStyle="{StaticResource FocusVisualStyle2}" Margin="4,0,-29,-2" FontSize="20" IsTabStop="True" FontStretch="Condensed" FontWeight="Medium">
+                    <TabItem.Background>
+                        <LinearGradientBrush EndPoint="0,1">
+                            <GradientStop Color="#FFF0F0F0"/>
+                            <GradientStop Color="#FF30954A" Offset="1"/>
+                        </LinearGradientBrush>
+                    </TabItem.Background>
+                    <TabItem.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}" FontFamily="{StaticResource ROGfont}" />
+                        </DataTemplate>
+                    </TabItem.HeaderTemplate>
+                    <Grid>
+                        <Grid.Background>
+                            <ImageBrush ImageSource="/Resources/grid_box1.png"/>
+                        </Grid.Background>
+                        <controls:Optimize FontSize="12">
+                            <controls:Optimize.Background>
+                                <ImageBrush/>
+                            </controls:Optimize.Background>
+                        </controls:Optimize>
+                    </Grid>
+                </TabItem>
+                <TabItem x:Name="actoxb_tab" Header="AC to Xbox Key"  FocusVisualStyle="{StaticResource FocusVisualStyle2}" Margin="31,1,-31,-1" FontSize="20" FontStretch="Condensed" FontWeight="Medium" Height="30">
+                    <TabItem.Background>
+                        <LinearGradientBrush EndPoint="0,1">
+                            <GradientStop Color="#FF262626"/>
+                            <GradientStop Color="#FF585858" Offset="1"/>
+                            <GradientStop Color="#FF8E8787" Offset="0.881"/>
+                            <GradientStop Color="#FFAEA7A7" Offset="0.092"/>
+                            <GradientStop Color="#FFE1E1E1" Offset="0.195"/>
+                            <GradientStop Color="#FFEFEFEF" Offset="0.732"/>
+                        </LinearGradientBrush>
+                    </TabItem.Background>
+                    <TabItem.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}" FontFamily="{StaticResource ROGfont}" />
+                        </DataTemplate>
+                    </TabItem.HeaderTemplate>
+                    <Grid Focusable="True">
+                        <Grid.Background>
+                            <ImageBrush ImageSource="/Resources/grid_box1.png"/>
+                        </Grid.Background>
+                        <controls:XboxButton/>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+            <Grid HorizontalAlignment="Left" Height="591" Margin="10,0,0,0" VerticalAlignment="Center" Width="145" RenderTransformOrigin="0.552,0.435" Opacity="0.7">
+                <Grid.Effect>
+                    <DropShadowEffect/>
+                </Grid.Effect>
+                <Grid.Background>
+                    <ImageBrush Stretch="UniformToFill" ImageSource="/Resources/darkbg2.png">
+                        <ImageBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="-1"/>
+                                <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                                <RotateTransform Angle="-540.725" CenterX="0.5" CenterY="0.5"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </ImageBrush.RelativeTransform>
+                    </ImageBrush>
+                </Grid.Background>
+                <Button x:Name="button" FocusVisualStyle="{StaticResource FocusVisualStyle}" Content="" HorizontalAlignment="Left" Height="87" Margin="10,28,0,0" VerticalAlignment="Top" Width="119" Focusable="True" IsEnabled="True" Visibility="Visible" BorderBrush="{x:Null}" BorderThickness="3,3,3,3" Click="button_Click">
+                    <Button.Background>
+                        <ImageBrush Stretch="UniformToFill" RenderOptions.BitmapScalingMode="HighQuality" ImageSource="/Resources/gpu2.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="button_Copy" FocusVisualStyle="{StaticResource FocusVisualStyle}" Content="" HorizontalAlignment="Center" Height="87" Margin="-1,144,0,0" VerticalAlignment="Top" Width="120" Focusable="True" BorderBrush="{x:Null}" BorderThickness="0,2,5,4" Padding="1,1,1,1" Click="button_Copy_Click" >
+                    <Button.Effect>
+                        <DropShadowEffect BlurRadius="2" ShadowDepth="3"/>
+                    </Button.Effect>
+                    <Button.Background>
+                        <ImageBrush Stretch="UniformToFill" RenderOptions.BitmapScalingMode="HighQuality" ImageSource="/Resources/optimize2.png">
+                            <ImageBrush.RelativeTransform>
+                                <TransformGroup>
+                                    <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="1"/>
+                                    <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                                    <RotateTransform CenterX="0.5" CenterY="0.5"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </ImageBrush.RelativeTransform>
+                        </ImageBrush>
+
+                    </Button.Background>
+                </Button>
+                <Button x:Name="button_Copy1" FocusVisualStyle="{StaticResource FocusVisualStyle}" Content="" HorizontalAlignment="Center" Height="87" Margin="0,261,0,0" VerticalAlignment="Top" Width="120" Focusable="True" BorderBrush="{x:Null}" Click="button_Copy1_Click">
+                    <Button.Background>
+                        <ImageBrush Stretch="Uniform" RenderOptions.BitmapScalingMode="HighQuality" ImageSource="/Resources/ac2xbx.png"/>
+                    </Button.Background>
+                </Button>
+            </Grid>
+            <Button x:Name="button_Copy2" FocusVisualStyle="{StaticResource FocusVisualStyle}" Content="" HorizontalAlignment="Left" Height="87" Margin="20,441,0,0" VerticalAlignment="Top" Width="120" Focusable="True" BorderBrush="{x:Null}" Click="button_Copy2_Click">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="2" ShadowDepth="3"/>
+                </Button.Effect>
+                <Button.Background>
+                    <ImageBrush Stretch="Uniform" RenderOptions.BitmapScalingMode="HighQuality" ImageSource="/Resources/exit.png"/>
+                </Button.Background>
+            </Button>
+
+        </Grid>
+        <Label x:Name="label" Content="A-helper [test build" FontFamily="{StaticResource ROGfont}" HorizontalAlignment="Left" Height="29" Margin="9,34,0,0" VerticalAlignment="Top" Width="145" Foreground="#FFD93636" FontSize="14" Padding="4,0,0,0">
+            <Label.Background>
+                <ImageBrush Stretch="Fill"/>
+            </Label.Background>
+        </Label>
+       
+    </Grid>
+</Window>

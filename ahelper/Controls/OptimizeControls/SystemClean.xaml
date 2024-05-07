@@ -1,0 +1,171 @@
+﻿<UserControl x:Class="ahelper.Controls.OptimizeControls.SystemClean"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ahelper.Controls.OptimizeControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="750">
+    <UserControl.Resources>
+        <Style x:Key="SwitchStyle"  TargetType="ToggleButton">
+            <Setter Property="Width" Value="50"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Background" Value="#FFCDCDCD"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ToggleButton">
+                        <Border Background="{TemplateBinding Background}" 
+                            CornerRadius="15" Padding="2,2,2,2" BorderBrush="#FF010000" BorderThickness="0.5">
+                            <Grid>
+                                <Ellipse x:Name="SwitchThumb" Width="26" Height="23" 
+                                     VerticalAlignment="Center"
+                                     HorizontalAlignment="Left" Fill="#FF424242"/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="SwitchThumb" Property="HorizontalAlignment" Value="Right"/>
+                                <Setter Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FF821313"/>
+                                            <GradientStop Color="#FFFF8383" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid Margin="0,-2,0,2">
+        <ToggleButton x:Name="CleanSystemToggle"
+                      Margin="527,63,0,0"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      Checked="CleanSystemToggle_Checked"
+                      Unchecked="CleanSystemToggle_Unchecked"
+                      IsChecked="True"
+                      FocusVisualStyle="{StaticResource FocusVisualStyle2}"
+                      Style="{StaticResource SwitchStyle}" Height="28" Width="62" />
+
+        <ToggleButton x:Name="Dx9Toggle"
+                      Margin="528,122,0,0"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      Checked="Dx9Toggle_Checked"
+                      Unchecked="Dx9Toggle_Unchecked"
+                      FocusVisualStyle="{StaticResource FocusVisualStyle2}"
+                      Style="{StaticResource SwitchStyle}" Height="28" Width="62" />
+
+        <ToggleButton x:Name="Dx11Toggle"
+                      Margin="528,154,0,0"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      Checked="Dx11Toggle_Checked"
+                      Unchecked="Dx11Toggle_Unchecked"
+                      FocusVisualStyle="{StaticResource FocusVisualStyle2}"
+                      Style="{StaticResource SwitchStyle}" Height="28" Width="62" />
+
+        <ToggleButton x:Name="Dx12Toggle"
+                      Margin="528,186,0,0"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      Checked="Dx12Toggle_Checked"
+                      Unchecked="Dx12Toggle_Unchecked"
+                      FocusVisualStyle="{StaticResource FocusVisualStyle2}"
+                      Style="{StaticResource SwitchStyle}" Height="28" Width="62" />
+        <ToggleButton x:Name="ToggleCoreIso"
+                      Margin="529,237,0,0"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      FocusVisualStyle="{StaticResource FocusVisualStyle2}"
+                      Style="{StaticResource SwitchStyle}"
+                      Height="28" Width="62" Padding="2,2,2,2"
+                      BorderBrush="#FF010000" BorderThickness="2,2,2,2"
+                      Checked="ToggleCoreIso_Checked"                                                                                                                                                                                   
+                      Unchecked="ToggleCoreIso_Unchecked" />
+
+        <Separator HorizontalAlignment="Left" Height="10" Margin="40,109,0,0" VerticalAlignment="Top" Width="555"/>
+        <Separator HorizontalAlignment="Left" Height="10" Margin="40,227,0,0" VerticalAlignment="Top" Width="555"/>
+        <Label x:Name="label" Content="Clean Temporary System Files" HorizontalAlignment="Left" Height="30" Margin="50,62,0,0" VerticalAlignment="Top" Width="445">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFA32828"/>
+                    <GradientStop Color="#FFE15151" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label x:Name="label_Copy" Content="DirectX 9 Cache" HorizontalAlignment="Left" Height="30" Margin="50,122,0,0" VerticalAlignment="Top" Width="445">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFA32828"/>
+                    <GradientStop Color="#FFE15151" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label x:Name="label_Copy1" Content="DirectX 11 Cache" HorizontalAlignment="Left" Height="30" Margin="50,153,0,0" VerticalAlignment="Top" Width="445">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFA32828"/>
+                    <GradientStop Color="#FFE15151" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label x:Name="label_Copy2" Content="DirectX 12 Cache" HorizontalAlignment="Left" Height="30" Margin="50,183,0,0" VerticalAlignment="Top" Width="445">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFA32828"/>
+                    <GradientStop Color="#FFE15151" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Label x:Name="label_Copy3" Content="Toggle Core Isolation ( If changed - Requires Restart to take effect )" HorizontalAlignment="Left" Height="30" Margin="51,240,0,0" VerticalAlignment="Top" Width="445">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFA32828"/>
+                    <GradientStop Color="#FFE15151" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Separator HorizontalAlignment="Left" Height="10" Margin="40,52,0,0" VerticalAlignment="Top" Width="555"/>
+        <Label x:Name="label1" Content="System Cache" HorizontalAlignment="Left" Height="28" Margin="40,32,0,0" VerticalAlignment="Top" Width="135" Foreground="#FFEEEEEE"/>
+        <Label x:Name="label1_Copy" Content="AMD GPU Shader Cache" HorizontalAlignment="Left" Height="25" Margin="40,91,0,0" VerticalAlignment="Top" Width="170" Foreground="#FFEEEEEE"/>
+        <Label x:Name="label1_Copy1" Content="System Tweaks" HorizontalAlignment="Left" Height="30" Margin="40,206,0,0" VerticalAlignment="Top" Width="135" Foreground="#FFEEEEEE"/>
+        <ToggleButton x:Name="ToggleDNS"
+            Margin="529,269,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FocusVisualStyle="{StaticResource FocusVisualStyle2}"
+            Checked="ToggleDNS_Checked"
+            Unchecked="ToggleDNS_Unchecked"
+            Style="{StaticResource SwitchStyle}" Height="28" Width="62" Padding="2,2,2,2" BorderBrush="#FF010000" BorderThickness="2,2,2,2" />
+        <Label x:Name="label_Copy4" Content="Clear DNS Cache" HorizontalAlignment="Left" Height="30" Margin="51,272,0,0" VerticalAlignment="Top" Width="445">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFA32828"/>
+                    <GradientStop Color="#FFE15151" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <ToggleButton x:Name="ToggleWinsock"
+            Margin="529,301,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FocusVisualStyle="{StaticResource FocusVisualStyle2}"
+            Checked="ToggleWinsock_Checked"
+            Unchecked="ToggleWinsock_Unchecked"
+            Style="{StaticResource SwitchStyle}" Height="28" Width="62" Padding="2,2,2,2" BorderBrush="#FF010000" BorderThickness="2,2,2,2" />
+        <Label x:Name="label_Copy5" Content="Reset WINSOCK" HorizontalAlignment="Left" Height="30" Margin="51,304,0,0" VerticalAlignment="Top" Width="445">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFA32828"/>
+                    <GradientStop Color="#FFE15151" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+
+    </Grid>
+</UserControl>

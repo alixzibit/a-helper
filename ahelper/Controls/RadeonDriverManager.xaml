@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="ahelper.Controls.RadeonDriverManager"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:controls="clr-namespace:ahelper.Controls"
+             xmlns:gif="https://github.com/XamlAnimatedGif/XamlAnimatedGif"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="800">
+    <Grid Height="400" VerticalAlignment="top" HorizontalAlignment="Stretch" Width="700">
+        <Button x:Name="backupdrv" FontFamily="{StaticResource ROGfont}" FocusVisualStyle="{StaticResource FocusVisualStyle}" Content="Backup Current Driver" Margin="454,90,20,254" Background="Transparent" Foreground="AntiqueWhite" FontStretch="Condensed" Click="backupdrv_Click"/>
+        <Button x:Name="installdrv" FontFamily="{StaticResource ROGfont}" FocusVisualStyle="{StaticResource FocusVisualStyle}" Content="Install 780m Driver" Margin="219,90,252,254" Background="Transparent" Foreground="AntiqueWhite" FontStretch="Condensed" Click="installdrv_Click"/>
+        <Button x:Name="restoredrv" FontFamily="{StaticResource ROGfont}" FocusVisualStyle="{StaticResource FocusVisualStyle}" Content="Restore Driver" Margin="20,90,486,254" Background="Transparent" Foreground="AntiqueWhite" FontStretch="Condensed" Click="restoredrv_Click"/>
+        <GroupBox x:Name="groupBox" FontFamily="{StaticResource ROGfont}" HorizontalAlignment="Center" Height="79" Header="Detected GPU Info" VerticalAlignment="Top" Width="680" Foreground="White">
+            <Label x:Name="gpuinfo" FontFamily="{StaticResource ROGfont}" Content="" HorizontalAlignment="Center" Height="34" Width="672" Foreground="White"/>
+        </GroupBox>
+        <TextBlock x:Name="statuslabel" HorizontalAlignment="Center" Height="46" Margin="0,151,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="660" Foreground="#FFFCFCFC" FontWeight="Bold" FontStretch="SemiCondensed"/>
+        <TextBox x:Name="txtOutput" Margin="10,202,0,171" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Visibility="Hidden"/>
+        <Image x:Name="loading_ui"
+               HorizontalAlignment="Left"
+               Height="38"
+               Margin="308,247,0,0"
+               VerticalAlignment="Top"
+               Width="52" gif:AnimationBehavior.SourceUri="/Resources/rog_loading.gif" Visibility="Hidden"/>
+        <TextBlock x:Name="statuslabel2" HorizontalAlignment="Left" Height="150" Margin="475,230,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="210" Foreground="#FFFCFCFC" FontStretch="SemiCondensed"/>
+    </Grid>
+</UserControl>

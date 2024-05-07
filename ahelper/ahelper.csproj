@@ -1,0 +1,93 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Resources\a_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Resources\asus_assets\**" />
+    <EmbeddedResource Remove="Resources\asus_assets\**" />
+    <None Remove="Resources\asus_assets\**" />
+    <Page Remove="Resources\asus_assets\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ac2xbx.png" />
+    <None Remove="asus_cac_gprofile_keymap_console_front%401.5x.png" />
+    <None Remove="asus_cac_gv_hover_box.png" />
+    <None Remove="asus_gc_aurazone_effectsname_bg.png" />
+    <None Remove="asus_gc_aura_customize_bg.png" />
+    <None Remove="asus_gc_calibration_card_bg.png" />
+    <None Remove="asus_gc_customize_colorpick_bg.png" />
+    <None Remove="braingoatsix_A_black_background_with_a_thin_red_border_the_colo_28b5dbef-2112-4ea3-985d-85f23ef9e273.png" />
+    <None Remove="braingoatsix_a_flat_uniform_black_background_with_subtle_carbon_a0f0d392-0e14-45e0-b2cd-940d5a3a259c.png" />
+    <None Remove="Controls\rog_loading.gif" />
+    <None Remove="darkbg2.png" />
+    <None Remove="darkbg3.png" />
+    <None Remove="darkbg_cb.png" />
+    <None Remove="exit.png" />
+    <None Remove="gpu.png" />
+    <None Remove="gpu1.png" />
+    <None Remove="gpu2.png" />
+    <None Remove="grid_box.png" />
+    <None Remove="optimize.png" />
+    <None Remove="optimize1.png" />
+    <None Remove="optimize2.png" />
+    <None Remove="Radeon.png" />
+    <None Remove="Resources\ac2xbx.png" />
+    <None Remove="Resources\a_icon.png" />
+    <None Remove="Resources\darkbg.png" />
+    <None Remove="Resources\darkbg2.png" />
+    <None Remove="Resources\exit.png" />
+    <None Remove="Resources\gpu1.png" />
+    <None Remove="Resources\gpu2.png" />
+    <None Remove="Resources\grid_box.png" />
+    <None Remove="Resources\grid_box1.png" />
+    <None Remove="Resources\optimize.png" />
+    <None Remove="Resources\optimize1.png" />
+    <None Remove="Resources\optimize2.png" />
+    <None Remove="Resources\Radeon-logo.png" />
+    <None Remove="Resources\Radeon.png" />
+    <None Remove="Resources\ROGFontsv.ttf" />
+    <None Remove="Resources\rog_loading.gif" />
+    <None Remove="Resources\xbox.png" />
+    <None Remove="xbox.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\a_icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Controls\rog_loading.gif" />
+    <Resource Include="Resources\ac2xbx.png" />
+    <Resource Include="Resources\a_icon.png" />
+    <Resource Include="Resources\darkbg.png" />
+    <Resource Include="Resources\darkbg2.png" />
+    <Resource Include="Resources\gpu2.png" />
+    <Resource Include="Resources\grid_box1.png" />
+    <Resource Include="Resources\optimize1.png" />
+    <Resource Include="Resources\optimize2.png" />
+    <Resource Include="Resources\exit.png" />
+    <Resource Include="Resources\ROGFontsv.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\rog_loading.gif" />
+    <Resource Include="Resources\xbox.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="InputSimulator" Version="1.0.4" />
+    <PackageReference Include="SharpDX.XInput" Version="4.2.0" />
+    <PackageReference Include="System.Management" Version="8.0.0" />
+    <PackageReference Include="System.ServiceProcess.ServiceController" Version="8.0.0" />
+    <PackageReference Include="XamlAnimatedGif" Version="2.3.0" />
+  </ItemGroup>
+
+</Project>
