@@ -1,4 +1,4 @@
-![icon](ahelper/Resources/a_icon.png)
+![icon](ahelper/Resources/a_icon_sm.png)
 
 
 # A-Helper: Automated Driver Helper and Optimization Utility for ROG Ally
