@@ -11,6 +11,8 @@ REQUIRES .NET 6 - If you do not have this installed, the application will prompt
 Test Build is available for [Download ](https://github.com/alixzibit/a-helper/releases/download/testbuild_release/ahelper_test_build.zip)
 
 USAGE INFO
+AS THIS IS A TEST BUILD - I STRONGLY RECOMMEND CREATING A SYSTEM RESTORE POINT ON YOUR DEVICE 
+
 
 REGARDING RADEON 780M DRIVER INSTALLATION
 
