@@ -1,3 +1,6 @@
+![icon](resources/a_icon.png)
+
+
 # A-Helper: Automated Driver Helper and Optimization Utility for ROG Ally
 
 Welcome to A-Helper, a specialized utility designed to enhance your experience on ROG Ally devices by providing driver installation support and system optimizations.
