@@ -1,49 +1,38 @@
-# a-helper
-A-Helper: A driver helper/optimization utility designed for ROG Ally
+# A-Helper: Automated Driver Helper and Optimization Utility for ROG Ally
 
-Features:
-> Automated Driver installation support for Radeon 780m driver (Experimental)
-> Armoury Crate button redirection to mimic Xbox guide button
-> 1-click optimization for WiFi/Bluetooth control, stopping services, clearing temporary system files, GPU cache and system level tweaks
+Welcome to A-Helper, a specialized utility designed to enhance your experience on ROG Ally devices by providing driver installation support and system optimizations.
 
+## Features
 
-REQUIRES .NET 6 - If you do not have this installed, the application will prompt for this and will take you to the official Microsoft website for download
-Test Build is available for [Download ](https://github.com/alixzibit/a-helper/releases/download/testbuild_release/ahelper_test_build.zip)
+- **Automated Radeon 780m Driver Installation**: Provides experimental support for automatic driver installation for 780m driver on Z1x SoC.
+- **Armoury Crate Button Redirection**: Mimics the Xbox guide button functionality, enhancing the gaming interface.
+- **1-Click Optimization**: Simplifies the optimization process for WiFi/Bluetooth controls, stops unnecessary services, clears temporary files, and applies GPU cache and system-level tweaks. This feature is designed to automatically select and manage certain services that are commonly found on ROG Ally devices, ensuring optimal system performance with minimal user input.
 
-USAGE INFO
+Recently Asus finally released AFMF enabled drivers - which makes the case for 780M drivers perhaps a bit unnecessary. But I would think that AMD will still be releasing updates to 780M drivers much quicker than Asus will to their Z1x Radeon Driver, so the use case for installing 780M driver IMHO is still valid
 
-AS THIS IS A TEST BUILD - I STRONGLY RECOMMEND CREATING A SYSTEM RESTORE POINT ON YOUR DEVICE 
+## Prerequisites
 
+- **.NET 6**: Necessary to run the application. If not installed, the application will guide you to the official Microsoft website for download.
 
-REGARDING RADEON 780M DRIVER INSTALLATION
+## Installation
 
-*Recently Asus finally released AFMF enabled drivers - which makes the case for 780M drivers perhaps a bit unecessary. But I would think that AMD will still be releasing updates to 780M drivers much quicker than Asus will to their Z1x Radeon Driver, so the use case for installing 780M driver IMHO is still valid*
+1. Download the test build from the [release page](https://github.com/alixzibit/a-helper/releases/download/testbuild_release/ahelper_test_build.zip).
+2. Extract the files to your preferred location.
 
-Installating 780M drivers
+## Important Usage Information
 
-I had a few ideas regarding a code managed automated driver installation but none of those ideas truly worked out in the case of manual driver installation for a device like ROG ALLY. There is a tried and tested method involving INF manipulation but that requires driver signature enforcement to be turned off which is not ideal for many reasons- the only method which can be achievable is through the use of SetupAPI programming which requires a solid understanding of low level system APIs and INF parsing. Anyways long story short - I decided to opt for a "fun" or some could say a radical way to approach this problem.
+- **System Restore**: Strongly recommended to create a system restore point before using this utility on your device.
+- **UI Navigation**: Utilizes gamepad inputs for navigation – the navigation works but its still under development – You will need to use Left button to cycle through UI elements if you are not able to focus using left stick or d-pad.
+   - **Movement**: Use the left stick or d-pad.
+   - **Select**: Press the 'A' button.
+   - **Cancel**: Press the 'B' button to exit automated interactions or screens.
 
-INSTRUCTIONS
-Automated UI interaction based driver installation - This method is experimental, but as far as my testing on my particular Ally unit and my development PC goes - it seems to work just fine. You will need to put your setup file in the applicaitons driver_setup folder and the applicaiton will take care of extracting the setup and then it will launch device properties of the AMD GPU and automatically browse through the UI, select the INF file, search and select from the devices list "AMD Radeon 780m" and prompt to install. You will need to manually select Yes or No for the final install prompt - this is left intentionally so that the user can review in case the automation didnt work as expected for some reason. 
+## Automated Driver Installation
 
-PLEASE NOTE - the moment automated UI interaction status appears in the application please do not tap on the screen or press any buttons which might interrupt the process - if you want to cancel you can tap B button 2-3 times to close the device properties and hence cancelling driver installation
+The application supports an automated UI interaction method for driver installation. Place your driver setup file in the application's driver_setup folder. The application will handle the extraction and launch of the device properties automatically, guiding you through the installation process.
 
+**Note**: During the automated UI interaction, avoid any screen taps or button presses that might interrupt the process. If necessary, press the 'B' button multiple times to cancel.
 
-UI Navigation
+## Contributions
 
-One of the primary goals of this utility is to utilize the gamepad in handheld device like in the ROG Ally to make UI interaction easier. A robust UI navigation and control is under development and testing. But for the time being the current implementation works but it is not seamless yet as its still work in progress.
-Before running the application make sure your device is set to auto controller mode
-- left stick or d-pad for movement,
--  A button for enter/clicks
--  B button will cancel or exit automated UI interaction or some screens
--  When you are unable to focus or jump to an expected button or control you can tap Left button
-which can cycle through all available UI elements on screen.
-- Only when you are interacting with stop services screen you will need to manually tap or use right stick to click out of focus from the services table list when you want to navigate away from there
-
-Armoury Crate to Xbox Key redirection
-
-This feature was developed based on the presence of Armoury Crate and related services which trigger the Armoury Crate application upon pressing the button - so if you stop Armoury Crate service or Asus monitor service this feature will not work. Also by default Game bar is opened when you press the button, but if you want Steam overlay - you will need to set that toggle which will disable Game bar completely.
-
-Optimize Features
-
-(more detailed readme will be added soon)
+Contributions are welcomed! Fork the repository, make your improvements, and submit a pull request.
