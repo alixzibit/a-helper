@@ -32,7 +32,7 @@ Recently Asus finally released AFMF enabled drivers - which makes the case for 7
 
 ## Automated Driver Installation
 
-The application supports an automated UI interaction method for driver installation. Place your driver setup file in the application's driver_setup folder. The application will handle the extraction and launch of the device properties automatically, guiding you through the installation process.
+The application supports an automated UI interaction method for driver installation. Place your driver setup file in the application's driver_setup folder. The application will handle the extraction and launch of the device properties automatically, guiding you through the installation process. The FINAL installation step where the prompt asks for user confirmation to proceed with installation is intentionally NOT AUTOMATED - this is to allow user to ensure the selected device from INF file is the correct one.
 
 **Note**: During the automated UI interaction, avoid any screen taps or button presses that might interrupt the process. If necessary, press the 'B' button multiple times to cancel.
 
