@@ -27,11 +27,6 @@ namespace ahelper.Controls
         [DllImport("user32.dll", SetLastError = true)]
         static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
 
-        [DllImport("user32.dll")]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
-
-        const int SW_MINIMIZE = 6;
 
 
         public XboxButton()
@@ -39,7 +34,7 @@ namespace ahelper.Controls
             InitializeComponent();
             timer = new DispatcherTimer
             {
-                Interval = TimeSpan.FromMilliseconds(160)  
+                Interval = TimeSpan.FromMilliseconds(50)  
             };
             timer.Tick += Timer_Tick;
         }
@@ -65,16 +60,18 @@ namespace ahelper.Controls
             {
                 try
                 {
-                    
-                    IntPtr hWnd = FindWindow(null, "Armoury Crate"); 
-                    if (hWnd != IntPtr.Zero)
-                    {
-                        ShowWindow(hWnd, SW_MINIMIZE);
-                    }
+                    // Directly attempt to kill the process without trying to find and minimize its window
+                    process.Kill();
+                    //Process.Start(new ProcessStartInfo
+                    //{
+                    //    FileName = "cmd.exe",
+                    //    Arguments = "/c taskkill /f /im ArmouryCrateSE.exe",
+                    //    CreateNoWindow = true,
+                    //    UseShellExecute = false
+                    //});
 
-                    process.Kill(); 
-                    process.WaitForExit(); 
-                    HandleOverlayToggle();
+                    process.WaitForExit(); // Ensures that the process has finished exiting
+                    HandleOverlayToggle(); // Proceed to handle the overlay toggle after the process is closed
                 }
                 catch (Exception ex)
                 {
@@ -82,6 +79,8 @@ namespace ahelper.Controls
                 }
             }
         }
+
+
 
         private void HandleOverlayToggle()
         {

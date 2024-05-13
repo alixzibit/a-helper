@@ -18,7 +18,16 @@
         <DataGrid x:Name="ServicesDataGrid" ItemsSource="{Binding ServiceItems}" SelectionMode="Extended" RowBackground="Transparent" AlternatingRowBackground="Transparent" AutoGenerateColumns="False"  Margin="0,15,0,15" PreviewKeyDown="DataGrid_PreviewKeyDown" FontSize="11" FontStretch="Condensed" FontWeight="Medium" Background="{x:Null}">
             <DataGrid.Resources>
                 <Style x:Key="HeaderStyle1" TargetType="{x:Type DataGridColumnHeader}">
-                    <Setter Property="Background" Value="Red"/>
+                    <Setter Property="Background">
+                        <Setter.Value>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFC61E1E"/>
+                                <GradientStop Color="#FFF24141" Offset="1"/>
+                                <GradientStop Color="#FFFF4B4B" Offset="0.893"/>
+                                <GradientStop Color="#FFD93434" Offset="0.809"/>
+                            </LinearGradientBrush>
+                        </Setter.Value>
+                    </Setter>
                     <Setter Property="Foreground" Value="White"/>
                     <Setter Property="FontWeight" Value="Bold"/>
                     <Setter Property="HorizontalAlignment" Value="Center"/>
