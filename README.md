@@ -25,7 +25,7 @@ Recently Asus finally released AFMF enabled drivers - which makes the case for 7
 ## Important Usage Information
 
 - **System Restore**: Strongly recommended to create a system restore point before using this utility on your device.
-- **UI Navigation**: Utilizes gamepad inputs for navigation – the navigation works but its still under development – You will need to use Left button to cycle through UI elements if you are not able to focus using left stick or d-pad.
+- **UI Navigation**: Utilizes gamepad inputs for navigation – the navigation works but its still under development (as long as you set to Auto control mode and have default windows control layout) – You will need to use Left button to cycle through UI elements if you are not able to focus using left stick or d-pad.
    - **Movement**: Use the left stick or d-pad.
    - **Select**: Press the 'A' button.
    - **Cancel**: Press the 'B' button to exit automated interactions or screens.
