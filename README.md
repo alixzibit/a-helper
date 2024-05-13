@@ -38,4 +38,7 @@ The application supports an automated UI interaction method for driver installat
 
 ## Contributions
 
-Contributions are welcomed! Fork the repository, make your improvements, and submit a pull request.
+Contributions are welcomed! Need help with testing and application improvements. Fork the repository, make your improvements, and submit a pull request.
+
+Testing credits:
+https://www.reddit.com/user/Loneliiii/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
