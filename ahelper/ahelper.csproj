@@ -66,6 +66,7 @@
 
   <ItemGroup>
     <Resource Include="Controls\rog_loading.gif" />
+    <Resource Include="exit.png" />
     <Resource Include="Resources\ac2xbx.png" />
     <Resource Include="Resources\a_icon.png" />
     <Resource Include="Resources\darkbg.png" />

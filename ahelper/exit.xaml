@@ -14,8 +14,9 @@
     </Window.Background>
     <Grid Margin="0,-5,0,0">
         <TextBlock x:Name="statusTextBlock" HorizontalAlignment="Left" Height="24" Margin="25,21,0,0" TextAlignment="Center" TextWrapping="NoWrap" Text="Quit Or Minimize Applicaiton?" VerticalAlignment="Top" Width="285" Foreground="White" IsEnabled="False"/>
-        <Button x:Name="button" Content="Quit" FocusVisualStyle="{StaticResource FocusVisualStyle2}" HorizontalAlignment="Left" Height="25" Margin="60,60,0,0" VerticalAlignment="Top" Width="95" Visibility="Visible" Background="{x:Null}" Foreground="White" Click="button_Click_1"/>
-        <Button x:Name="button_Copy" Content="Minimize" FocusVisualStyle="{StaticResource FocusVisualStyle2}" HorizontalAlignment="Left" Height="25" Margin="190,60,0,0" VerticalAlignment="Top" Width="95" Visibility="Visible" Background="{x:Null}" Foreground="White" Click="button_Copy_Click"/>
+        <Button x:Name="button" Content="Quit" FocusVisualStyle="{StaticResource FocusVisualStyle2}" HorizontalAlignment="Left" Height="25" Margin="13,60,0,0" VerticalAlignment="Top" Width="95" Visibility="Visible" Background="{x:Null}" Foreground="White" Click="button_Click_1"/>
+        <Button x:Name="button_Copy" Content="Minimize" FocusVisualStyle="{StaticResource FocusVisualStyle2}" HorizontalAlignment="Center" Height="25" Margin="0,60,0,0" VerticalAlignment="Top" Width="95" Visibility="Visible" Background="{x:Null}" Foreground="White" Click="button_Copy_Click"/>
+        <Button x:Name="button_Copy1" Content="Cancel" FocusVisualStyle="{StaticResource FocusVisualStyle2}" HorizontalAlignment="Left" Height="25" Margin="239,60,0,0" VerticalAlignment="Top" Width="95" Visibility="Visible" Background="{x:Null}" Foreground="White" Click="button_Copy_Click2"/>
 
     </Grid>
 </Window>

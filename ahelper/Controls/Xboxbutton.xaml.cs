@@ -1,11 +1,8 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Threading;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
-using System.Threading;
-using System.Linq;
 
 namespace ahelper.Controls
 {

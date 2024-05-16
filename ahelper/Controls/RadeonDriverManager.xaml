@@ -22,6 +22,13 @@
                Margin="308,247,0,0"
                VerticalAlignment="Top"
                Width="52" gif:AnimationBehavior.SourceUri="/Resources/rog_loading.gif" Visibility="Hidden"/>
-        <TextBlock x:Name="statuslabel2" HorizontalAlignment="Left" Height="150" Margin="475,230,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="210" Foreground="#FFFCFCFC" FontStretch="SemiCondensed"/>
+        <TextBlock x:Name="statuslabel2" HorizontalAlignment="Left" Height="190" Margin="440,205,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="245" FontStretch="SemiCondensed">
+            <TextBlock.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFE87070"/>
+                    <GradientStop Color="#FFF91212" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+        </TextBlock>
     </Grid>
 </UserControl>

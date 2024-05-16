@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.ServiceProcess;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
-using System.Windows.Input;
-using System.Threading.Tasks;
+﻿using System.ServiceProcess;
 using System.ComponentModel;
 
 namespace ahelper.Helpers
@@ -24,7 +15,7 @@ namespace ahelper.Helpers
             predefinedServicesToTerminate = new List<string>
             {
                 "GlideXService", "GlideXRemoteService", "GlideXNearService", "GlideXServiceExt",
-                "wuauserv", "CertPropSvc", "ClickToRunSvc", "edgeupdate", "edgeupdatem",
+                "wuauserv", "CertPropSvc", "ClickToRunSvc", "edgeupdate", "edgeupdatem", "WinDefend",
                 "WwanSvc", "ScDeviceEnum", "SCardSvr", "WSearch", "Spooler", "Sense",
                 "SEMgrSvc", "", "vmicguestinterface", "vmicheartbeat", "vmickvpexchange", "vmicompute",
                 "vmicrdv", "vmicshutdown", "vmictimesync", "vmicvmsession", "vmicvss"

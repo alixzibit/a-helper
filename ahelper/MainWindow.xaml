@@ -137,7 +137,7 @@
                     <DropShadowEffect BlurRadius="2" ShadowDepth="3"/>
                 </Button.Effect>
                 <Button.Background>
-                    <ImageBrush Stretch="Uniform" RenderOptions.BitmapScalingMode="HighQuality" ImageSource="/Resources/exit.png"/>
+                    <ImageBrush Stretch="Uniform" RenderOptions.BitmapScalingMode="HighQuality" ImageSource="/exit.png"/>
                 </Button.Background>
             </Button>
 

@@ -1,22 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using System.Diagnostics;
 using ahelper.Helpers;
 using WindowsInput;
 using WindowsInput.Native;
 using System.IO;
-using System.Windows.Media;
-using System.Windows.Threading;
 using Path = System.IO.Path;
-using SharpDX.XInput;
-using System.Management;
-using System.Threading;
-
 
 
 namespace ahelper.Controls
@@ -89,7 +78,8 @@ namespace ahelper.Controls
 
             // Find the driver executable from app root
             string appRootPath = AppDomain.CurrentDomain.BaseDirectory;
-            string driverFileName = Directory.EnumerateFiles(appRootPath, "driver_setup\\whql-amd-software-adrenalin*.exe")
+            string driverFileName = Directory
+                .EnumerateFiles(appRootPath, "driver_setup\\whql-amd-software-adrenalin*.exe")
                 .FirstOrDefault();
 
             if (!string.IsNullOrEmpty(driverFileName))
@@ -148,7 +138,7 @@ namespace ahelper.Controls
             //PCI\\VEN_10DE&DEV_2204&SUBSYS_87B51043&REV_A1\\4&3292EEB7&0&0008\ 3090 dev pc
             // PCI\\VEN_1002&DEV_15BF&SUBSYS_17F31043&REV_04\\4&98C338A&0&0041\ z1x ally
             DriverInstallVerifier verifier = new DriverInstallVerifier();
-           
+
 
             if (!await OpenDeviceProperties())
             {
@@ -157,9 +147,11 @@ namespace ahelper.Controls
                 statuslabel.Text = "Driver installation stopped due to device not found";
                 return; // Stop further execution because the device properties could not be opened
             }
+
             Dispatcher.InvokeAsync(() =>
             {
-                statuslabel2.Text = "<== Automated UI interaction is in progress - PRESS (B) 2-3 times TO CANCEL";
+                statuslabel2.Text =
+                    "<== Automated UI interaction is in progress. *FINAL STEP REQUIRES USER CONFIRMATION* PRESS (B) 2-3 times TO CANCEL";
             });
             txtOutput.Visibility = Visibility.Hidden;
             await Task.Delay(1000);
@@ -179,6 +171,11 @@ namespace ahelper.Controls
                 loading_ui.Visibility = Visibility.Hidden;
                 statuslabel2.Text = "";
                 DisplayGpuInfo();
+
+                if (isInstallSuccessful)
+                {
+                    PromptAdrenalinSoftwareInstallation();
+                }
             });
         }
 
@@ -205,6 +202,48 @@ namespace ahelper.Controls
             {
                 MessageBox.Show($"Failed to open device properties: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
+            }
+        }
+
+        private void PromptAdrenalinSoftwareInstallation()
+        {
+            MessageBoxResult result = MessageBox.Show("Would you like to install AMD Settings/Adrenalin Software which came with this driver?",
+                "Install Adrenalin Software",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
+            {
+                InstallAdrenalinSoftware();
+            }
+        }
+
+        private void InstallAdrenalinSoftware()
+        {
+            string setupPath = @"C:\AMD\AMD-Software-Installer\Packages\Drivers\Display\WT6A_INF\B401180\ccc2_install.exe";
+            if (File.Exists(setupPath))
+            {
+                try
+                {
+                    Process.Start(new ProcessStartInfo
+                    {
+                        FileName = setupPath,
+                        UseShellExecute = true,
+                    });
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Failed to start Adrenalin Software installation: {ex.Message}",
+                        "Error",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("The Adrenalin Software setup file was not found.",
+                    "File Not Found",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
             }
         }
 
