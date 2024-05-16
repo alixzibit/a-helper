@@ -25,14 +25,14 @@ Recently Asus finally released AFMF enabled drivers - which makes the case for 7
 ## Important Usage Information
 
 - **System Restore**: Strongly recommended to create a system restore point before using this utility on your device.
-- **UI Navigation**: Utilizes gamepad inputs for navigation – the navigation works but its still under development – You will need to use Left button to cycle through UI elements if you are not able to focus using left stick or d-pad.
+- **UI Navigation**: Utilizes gamepad inputs for navigation – the navigation works but its still under development (as long as you set to Auto control mode and have default windows control layout) – You will need to use Left button to cycle through UI elements if you are not able to focus using left stick or d-pad.
    - **Movement**: Use the left stick or d-pad.
    - **Select**: Press the 'A' button.
    - **Cancel**: Press the 'B' button to exit automated interactions or screens.
 
 ## Automated Driver Installation
 
-The application supports an automated UI interaction method for driver installation. Place your driver setup file in the application's driver_setup folder. The application will handle the extraction and launch of the device properties automatically, guiding you through the installation process.
+The application supports an automated UI interaction method for driver installation. Place your driver setup file in the application's driver_setup folder. The application will handle the extraction and launch of the device properties automatically, guiding you through the installation process. The FINAL installation step where the prompt asks for user confirmation to proceed with installation is intentionally NOT AUTOMATED - this is to allow user to ensure the selected device from INF file is the correct one.
 
 **Note**: During the automated UI interaction, avoid any screen taps or button presses that might interrupt the process. If necessary, press the 'B' button multiple times to cancel.
 
